@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+body {
+  background-color: rgb(196, 228, 231);
+}
+.main-container {
+  width: 65%;
+  height: 75%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+.main-title {
+  font-size: 24px;
+  letter-spacing: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: hsl(183, 100%, 15%);
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 30px;
+  padding: 30px;
+  display: flex;
+}
+.label-active_number::after {
+  content: "Can't be zero";
+  color: red;
+  position: absolute;
+  right: 25px;
+}
+
+/* Remove arrows on input type = 'number' */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  padding: 0 25px;
+}
+.input {
+  direction: rtl;
+  width: 100%;
+  font-size: 24px;
+  background-color: hsl(189, 41%, 97%);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+.bill-input,
+.input-number__people {
+  background-image: url(images/icon-dollar.svg);
+  background-repeat: no-repeat;
+  background-size: 12px;
+  background-position-x: 5%;
+  background-position-y: 50%;
+  position: left;
+  padding-left: 30px;
+}
+.input-number__people {
+  background-image: url(images/icon-person.svg);
+}
+.input:focus {
+  outline-color: hsl(185, 41%, 84%);
+}
+
+.tip-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  gap: 12px;
+}
+.tip-container p {
+  width: 100%;
+}
+.btn-tip,
+.input-custom__tip {
+  width: 30%;
+  height: 45px;
+  border-radius: 5px;
+  color: white;
+  font-size: 24px;
+  border: none;
+  background-color: hsl(183, 100%, 15%);
+  cursor: pointer;
+}
+.active {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+.btn-tip:hover {
+  background-color: hsl(185, 41%, 84%);
+  color: hsl(183, 100%, 15%);
+}
+.input-custom__tip {
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(185, 41%, 84%);
+  border: none;
+  text-align: center;
+  cursor: text;
+}
+.input-custom__tip:focus {
+  outline-color: hsl(185, 41%, 84%);
+  background-color: hsl(189, 41%, 97%);
+}
+.result-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  padding: 40px;
+  padding-bottom: 30px;
+  border-radius: 15px;
+  background-color: hsl(183, 100%, 15%);
+}
+.result-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.tip-label__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tip-label__container .title {
+  font-size: 18px;
+  color: white;
+}
+.tip-label__container .description {
+  font-size: 14px;
+  color: hsl(184, 14%, 56%);
+}
+.amount {
+  font-size: 32px;
+  font-weight: 700;
+  color: hsl(185, 41%, 84%);
+}
+.btn-reset {
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  border: none;
+  border-radius: 3px;
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(189, 41%, 97%);
+  opacity: 50%;
+  cursor: pointer;
+}
+.attribution {
+  position: absolute;
+  bottom: 5px;
+  font-size: 11px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  width: 100%;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 640px) {
+  .main-container {
+    margin-top: 100px;
+    width: 100%;
+    height: max-content;
+    /* justify-content: space-evenly; */
+  }
+  .card {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 30px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .input-container {
+    width: 100%;
+    padding: 0;
+    gap: 30px;
+  }
+  .btn-tip,
+  .input-custom__tip {
+    width: 48%;
+  }
+  .label-active_number::after {
+    right: 0;
+  }
+  .result-container {
+    width: 100%;
+    padding: 40px 20px;
+    gap: 40px;
+    text-transform: capitalize;
+  }
+  .attribution {
+    display: none;
+  }
+}
